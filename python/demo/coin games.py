@@ -1,5 +1,5 @@
 #!/usr/bin/python
- -*- coding: UTF-8 -*-
+ #-*- coding: UTF-8 -*-
 import random
 from tkinter import *
 class Windows:
@@ -7,3 +7,6 @@ class Windows:
         self.w=width
         self.h=height
         self.stat=True
+        self.staFunc=staFunc
+        self.stoFunc=stoFunc
+
