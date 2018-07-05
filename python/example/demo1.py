@@ -65,5 +65,66 @@
 # print(b)
 
 
+#five
+# from math import sqrt
+# for n in range (99,81,-1):
+#     root =sqrt(n)
+#     if root == int(root):
+#         print(n)
+#         break
+# else:
+#     print('didn`t find it!')
 
+#six
+# def fibs(num):
+#     result = [0,1]
+#     for i in range(num -2):
+#         result.append(result[-2]+result[-1])
+#     return result
+#
+#
+# print(fibs(20))
+
+
+#seven
+
+
+def init(data):#初始化数据
+    data['first'] = {}
+    data['middle'] = {}
+    data['last'] = {}
+storage = {}
+init(storage)
+print(storage)
+
+#获取人员姓名
+def lookup(data,label,name):
+    return data[label].get(name)
+
+
+#将人员存储到数据结构
+def store(data,full_name):
+    names = full_name.split()
+    if len(names) == 2: names.insert(1,' ')
+    labels = 'first','middle','last'
+
+    for label ,name in zip(labels,names):
+        people = lookup(data,label,name)
+        if people:
+            people.append(full_name)
+        else:
+            data[label][name] = [full_name]
+
+MyNames = {}
+init(MyNames)
+store(MyNames,'Magnus Lie Hetland')
+print('打印中间名称：',lookup(MyNames,'middle','Lie'))
+
+store(MyNames,'Robin Hood')
+store(MyNames,'Robin Lockslev')
+print('打印姓：',lookup(MyNames,'first','Robin'))
+
+store(MyNames,'bi qi')
+store(MyNames,'fu qi qi')
+print(lookup(MyNames,'last','qi'))
 
